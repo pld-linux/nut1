@@ -10,7 +10,6 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://eu1.networkupstools.org/source/1.2/nut-%{version}.tar.gz
 # Source0-md5:	87dd831a819d06904cbe06e70dcf3c2f
-# Source0-size:	563526
 Source1:	nut.init
 Source2:	nut.sysconfig
 Source3:	nut-upsmon.init
@@ -28,14 +27,14 @@ BuildRequires:	libpng-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	rpmbuild(macros) >= 1.159
 PreReq:		rc-scripts
-Requires(pre):  /bin/id
-Requires(pre):  /usr/bin/getgid
-Requires(pre):  /usr/sbin/groupadd
+Requires(pre):	/bin/id
+Requires(pre):	/usr/bin/getgid
+Requires(pre):	/usr/sbin/groupadd
 Requires(pre):	/usr/sbin/groupmod
-Requires(pre):  /usr/sbin/useradd
-Requires(post,preun):   /sbin/chkconfig
-Requires(postun):       /usr/sbin/groupdel
-Requires(postun):       /usr/sbin/userdel
+Requires(pre):	/usr/sbin/useradd
+Requires(post,preun):	/sbin/chkconfig
+Requires(postun):	/usr/sbin/groupdel
+Requires(postun):	/usr/sbin/userdel
 Requires:	%{name}-common = %{version}-%{release}
 Provides:	group(ups)
 Provides:	user(ups)
