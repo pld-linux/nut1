@@ -1,6 +1,11 @@
 #
 # Conditional build:
 #
+# NOTE: Do not (!!!) upgrade nut above 1.2.3 -- everups.c works better 
+#		with some EVER upses end compiles with nut up to 1.2.3
+#
+#		You Have Been Warned 
+#
 Summary:	Network UPS Tools
 Summary(pl):	Sieciowe narzêdzie do UPS-ów
 Name:		nut1
