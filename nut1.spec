@@ -1,15 +1,15 @@
 #
 # Conditional build:
 #
-Summary:	Network UPS Tools - series 1.x
-Summary(pl):	Sieciowe narzêdzie do UPS-ów - serie 1.x
+Summary:	Network UPS Tools
+Summary(pl):	Sieciowe narzêdzie do UPS-ów
 Name:		nut1
-Version:	1.4.3
+Version:	1.2.3
 Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://eu1.networkupstools.org/source/1.4/nut-%{version}.tar.gz
-# Source0-md5:	f321465969fdf1f921f82c38d7398520
+Source0:	http://eu1.networkupstools.org/source/1.2/nut-%{version}.tar.gz
+# Source0-md5:	87dd831a819d06904cbe06e70dcf3c2f
 Source1:	nut.init
 Source2:	nut.sysconfig
 Source3:	nut-upsmon.init
