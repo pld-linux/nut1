@@ -1,10 +1,10 @@
 #
 # Conditional build:
 #
-# NOTE: Do not (!!!) upgrade nut above 1.2.3 -- everups.c works better 
+# NOTE: Do not (!!!) upgrade nut above 1.2.3 -- everups.c works better
 #		with some EVER upses end compiles with nut up to 1.2.3
 #
-#		You Have Been Warned 
+#		You Have Been Warned
 #
 Summary:	Network UPS Tools
 Summary(pl):	Sieciowe narzЙdzie do UPS-Сw
@@ -31,16 +31,16 @@ BuildRequires:	gd-devel >= 2.0.15
 BuildRequires:	libpng-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	rpmbuild(macros) >= 1.202
-PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
+Requires(postun):	/usr/sbin/groupdel
+Requires(postun):	/usr/sbin/userdel
 Requires(pre):	/bin/id
 Requires(pre):	/usr/bin/getgid
 Requires(pre):	/usr/sbin/groupadd
 Requires(pre):	/usr/sbin/groupmod
 Requires(pre):	/usr/sbin/useradd
-Requires(post,preun):	/sbin/chkconfig
-Requires(postun):	/usr/sbin/groupdel
-Requires(postun):	/usr/sbin/userdel
 Requires:	%{name}-common = %{version}-%{release}
+Requires:	rc-scripts
 Provides:	group(ups)
 Provides:	user(ups)
 Obsoletes:	smartupstools
@@ -101,9 +101,9 @@ Summary(pl):	NarzЙdzia klienckie do monitorowania UPS-Сw
 Summary(uk):	Network UPS Tools - кл╕╓нтськ╕ утил╕ти мон╕торингу
 Summary(ru):	Network UPS Tools - клиентские утилиты мониторинга
 Group:		Applications/System
-PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name}-common = %{version}-%{release}
+Requires:	rc-scripts
 
 %description client
 This package includes the client utilities that are required to
@@ -277,11 +277,11 @@ fi
 %attr(755,root,root) %{_bindir}/upsrw
 %attr(755,root,root) %{_sbindir}/upsd
 %attr(755,root,root) /sbin/poweroff-ups
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/ups
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/ups
 %attr(754,root,root) /etc/rc.d/init.d/ups
-%attr(640,root,ups) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsd.conf
-%attr(640,root,ups) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/ups.conf
-%attr(640,root,ups) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsd.users
+%attr(640,root,ups) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsd.conf
+%attr(640,root,ups) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ups.conf
+%attr(640,root,ups) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsd.users
 %{_mandir}/man5/ups.conf.5*
 %{_mandir}/man5/upsd.conf.5*
 %{_mandir}/man5/upsd.users.5*
@@ -307,9 +307,9 @@ fi
 %attr(755,root,root) %{_sbindir}/upssched
 #%attr(755,root,root) %{_sbindir}/upssched-cmd
 %attr(754,root,root) /etc/rc.d/init.d/upsmon
-%attr(600,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsmon.conf
-%attr(600,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upssched.conf
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/upsmon
+%attr(600,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsmon.conf
+%attr(600,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upssched.conf
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/upsmon
 %{_mandir}/man5/upsmon.conf.5*
 %{_mandir}/man5/upssched.conf.5*
 %{_mandir}/man8/upsc.8*
@@ -319,9 +319,9 @@ fi
 %files cgi
 %defattr(644,root,root,755)
 %attr(755,root,root) /home/services/httpd/cgi-bin/*.cgi
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/hosts.conf
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/upsset.conf
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/*.html
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/hosts.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/upsset.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.html
 %{_mandir}/man5/hosts.conf.5*
 %{_mandir}/man5/upsset.conf.5*
 %{_mandir}/man5/upsstats.html.5*
