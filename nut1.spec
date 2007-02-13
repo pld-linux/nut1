@@ -7,7 +7,7 @@
 #		You Have Been Warned
 #
 Summary:	Network UPS Tools
-Summary(pl.UTF-8):   Sieciowe narzędzie do UPS-ów
+Summary(pl.UTF-8):	Sieciowe narzędzie do UPS-ów
 Name:		nut1
 Version:	1.2.3
 Release:	1
@@ -86,7 +86,7 @@ UPS. Ця можливість була використана, де це мож
 
 %package common
 Summary:	Package with common files for nut daemon and its clients
-Summary(pl.UTF-8):   Pakiet z plikami wspólnymi dla demona nut i jego klientów
+Summary(pl.UTF-8):	Pakiet z plikami wspólnymi dla demona nut i jego klientów
 Group:		Applications/System
 
 %description common
@@ -97,9 +97,9 @@ Pakiet z plikami wspólnymi dla demona nut i jego klientów.
 
 %package client
 Summary:	Multi-vendor UPS Monitoring Project Client Utilities
-Summary(pl.UTF-8):   Narzędzia klienckie do monitorowania UPS-ów
-Summary(uk.UTF-8):   Network UPS Tools - клієнтські утиліти моніторингу
-Summary(ru.UTF-8):   Network UPS Tools - клиентские утилиты мониторинга
+Summary(pl.UTF-8):	Narzędzia klienckie do monitorowania UPS-ów
+Summary(uk.UTF-8):	Network UPS Tools - клієнтські утиліти моніторингу
+Summary(ru.UTF-8):	Network UPS Tools - клиентские утилиты мониторинга
 Group:		Applications/System
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name}-common = %{version}-%{release}
@@ -127,9 +127,9 @@ UPS, к которому клиентский хост имеет доступ, 
 
 %package cgi
 Summary:	Multi-vendor UPS Monitoring Project Server - CGI utils
-Summary(pl.UTF-8):   Narzędzia CGI do monitorowania UPS-ów
-Summary(ru.UTF-8):   Network UPS Tools - CGI утилиты
-Summary(uk.UTF-8):   Network UPS Tools - CGI утиліти
+Summary(pl.UTF-8):	Narzędzia CGI do monitorowania UPS-ów
+Summary(ru.UTF-8):	Network UPS Tools - CGI утилиты
+Summary(uk.UTF-8):	Network UPS Tools - CGI утиліти
 Group:		Applications/System
 Requires:	%{name}-common = %{version}-%{release}
 
@@ -158,7 +158,7 @@ UPS через веб-інтерфейс.
 
 %package devel
 Summary:	Files for NUT clients development
-Summary(pl.UTF-8):   Pliki do tworzenia klientów NUT-a
+Summary(pl.UTF-8):	Pliki do tworzenia klientów NUT-a
 Group:		Development/Libraries
 Requires:	openssl-devel >= 0.9.7c
 # it does NOT require nut
